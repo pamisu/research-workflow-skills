@@ -16,18 +16,30 @@ A **Claude Code Skills collection** for academic cybersecurity research — 15 c
 skill-name/
 ├── SKILL.md          # Required: YAML frontmatter + Markdown body
 ├── LICENSE           # Optional
-├── manifest.yaml     # Optional (nature-* skills)
-├── README.md         # Optional (nature-* skills)
+├── manifest.yaml     # Optional (router-based skills)
+├── README.md         # Optional (router-based skills)
 └── assets/           # Optional
+
+ars-suite/            # Multi-skill suite (shared infrastructure)
+├── SKILL.md          # Parent router
+├── deep-research/SKILL.md
+├── academic-paper/SKILL.md
+├── academic-paper-reviewer/SKILL.md
+├── academic-pipeline/SKILL.md
+├── shared/           # Shared agents, contracts, templates
+└── LICENSE           # CC-BY-NC 4.0
 ```
 
 ## Skill Inventory
 
-### Core Research (6)
-`academic-research-suite`, `planning-with-files`, `neat-freak`, `unslop`, `unslop-file`, `research-codex/*` (3 sub-skills: research, research-deep, research-report)
+### Academic Research Suite (4 sub-skills, CC-BY-NC 4.0)
+`ars-suite/*`: `deep-research` (13-agent, 8 modes), `academic-paper` (12-agent, 11 modes, IEEE/APA/MLA/Chicago/Vancouver), `academic-paper-reviewer` (5-reviewer simulation), `academic-pipeline` (10-stage orchestrator)
 
 ### Paper Writing (7)
-`nature-figure`, `nature-writing`, `nature-polishing`, `nature-citation`, `nature-data`, `nature-paper2ppt`, `nature-response`
+`academic-figure`, `paper-writing`, `paper-polishing`, `targeted-citation`, `data-availability`, `paper2ppt`, `reviewer-response`
+
+### Core Workflow (4)
+`planning-with-files`, `neat-freak`, `unslop`, `unslop-file`
 
 ### Removed Categories
 Network traffic, code security, threat intel, SOC operations, and all niche/overlapping skills were removed as they don't apply to ML-focused traffic classification research. Experimental data processing, code auditing, and threat modeling are handled by Claude's native capabilities or aren't needed for this research direction.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Data Availability"
+  short_description: "Draft bilingual-aware data availability statements"
+  default_prompt: "Help me turn my Chinese or English data notes into a publication-ready Data Availability statement, repository plan, and FAIR metadata checklist."

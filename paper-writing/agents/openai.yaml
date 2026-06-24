@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Writing"
+  short_description: "Draft academic manuscript sections"
+  default_prompt: "Help me turn my claims, results, figures, or Chinese notes into a manuscript section with a clear argument and claim-evidence map."

@@ -16,24 +16,24 @@
 
 | Skill 名称 | GitHub 地址 | 核心用途 |
 |------------|-------------|----------|
-| `academic-research-suite` | [github.com/imbad0202/academic-research-skills-codex](https://github.com/Imbad0202/academic-research-skills-codex) | 全流程科研主干：/ars-plan 选题、/ars-lit-review 文献综述、/ars-review 模拟审稿、写作逻辑校验 |
+| `ars-suite` | [github.com/Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills-codex) | 全流程科研主干：deep-research socratic 选题、deep-research lit-review 文献综述、academic-paper-reviewer 模拟审稿、写作逻辑校验 |
 | `planning-with-files` | [github.com/OthmanAdi/planning-with-files](https://github.com/othmanadi/planning-with-files) | 长任务持久化计划，跨会话不丢失进度 |
 | `neat-freak` | [github.com/KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) | /neat 阶段收尾同步文档、代码与 Agent 记忆 |
 | `unslop` | [github.com/MohamedAbdallah-14/unslop](https://github.com/MohamedAbdallah-14/unslop) | 去 AI 写作痕迹，5 级强度可调，保留代码/URL/表格 |
 | `unslop-file` | （本仓库自带） | Markdown 文件人性化（计划、文档等） |
-| `research-codex` | [github.com/Weizhena/Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills) | 结构化深度文献调研（两阶段：纲要→深度展开→汇总报告） |
+| `deep-research` | [github.com/Weizhena/Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills) | 结构化深度文献调研（两阶段：纲要→深度展开→汇总报告） |
 
 ### 1.2 论文写作套件（7个）
 
 | Skill 名称 | GitHub 地址 | 核心用途 |
 |------------|-------------|----------|
-| `nature-figure` | [github.com/Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | 顶会图表规范校验与生成（阶段三图表规划→阶段四.2 生成→阶段六最终校验） |
-| `nature-writing` | 同上 | 论文章节写作优化 |
-| `nature-polishing` | 同上 | 语言抛光与学术表达优化 |
-| `nature-citation` | 同上 | 引用格式规范化 |
-| `nature-data` | 同上 | 实验数据展示规范 |
-| `nature-paper2ppt` | 同上 | 论文转演示文稿 |
-| `nature-response` | 同上 | 审稿意见回复辅助 |
+| `academic-figure` | [github.com/Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | 顶会图表规范校验与生成（阶段三图表规划→阶段四.2 生成→阶段六最终校验） |
+| `paper-writing` | 同上 | 论文章节写作优化 |
+| `paper-polishing` | 同上 | 语言抛光与学术表达优化 |
+| `targeted-citation` | 同上 | 引用格式规范化 |
+| `data-availability` | 同上 | 实验数据展示规范 |
+| `paper2ppt` | 同上 | 论文转演示文稿 |
+| `reviewer-response` | 同上 | 审稿意见回复辅助 |
 
 > **关于已移除的 Skills**：原指导书中的 `Anthropic-Cybersecurity-Skills`（威胁情报/流量狩猎）、`trailofbits/skills`（静态分析/YARA）、`briiirussell/cybersecurity-skills`（Sigma/检测工程）、`Masriyan/Claude-Code-CyberSecurity-Skill`（日志分析）等 48 个 Skill 已从本仓库移除。这些 Skill 用于检测工程、恶意软件分析、SOC 运营等方向，对加密流量分类/ML 方法创新等研究方向并非必需。实验数据处理、代码审查、威胁建模等能力由 AI 原生能力替代，无需专用 Skill。
 
@@ -53,18 +53,18 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `academic-research-suite` | `/ars-plan` | 凝练研究问题、梳理创新方向 |
+| `ars-suite` | `deep-research socratic` | 凝练研究问题、梳理创新方向 |
 | `planning-with-files` | 直接调用 | 初始化项目里程碑计划，持久化到文件 |
 | `neat-freak` | `/neat` | 阶段收尾，同步框架信息到项目文档与 Agent 记忆 |
 
 #### 操作方法
 
 1. **核心问题凝练**
-   调用 `academic-research-suite` 的计划能力，输入研究方向与背景，通过多轮对话收敛研究边界。
+   调用 `deep-research` 的 socratic 模式，输入研究方向与背景，通过多轮对话收敛研究边界。
 
    指令示例：
 
-   > /academic-research-suite: 我想研究「基于多维度流量特征的恶意 LLM Agent 通信检测」
+   用 ars-suite 的 deep-research: 我想研究「基于多维度流量特征的恶意 LLM Agent 通信检测」
    > 背景：当前 LLM Agent 广泛应用于自动化任务，其 C2 通信与恶意指令分发难以被传统 IDS 识别
    > 请梳理核心研究问题、明确与现有工作的差异、初步的创新方向
 
@@ -118,8 +118,8 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `academic-research-suite` | `/ars-lit-review` | 系统性文献综述，输出结构化综述与研究缺口矩阵 |
-| `research-codex` | 直接调用 | 两阶段深度调研：先纲要确认，再逐项展开 |
+| `ars-suite` | `deep-research lit-review` | 系统性文献综述，输出结构化综述与研究缺口矩阵 |
+| `deep-research` | 直接调用 | 两阶段深度调研：先纲要确认，再逐项展开 |
 | `neat-freak` | `/neat` | 阶段收尾 |
 
 > **关于威胁建模**：检测、攻防、恶意软件分析等方向可能需要 MITRE ATT&CK 威胁框架映射或领域威胁模型（如 Dolev-Yao、UC 模型），这部分由 AI 原生能力辅助完成。加密流量分类等 ML 方法创新方向通常不需要独立的威胁建模步骤。
@@ -127,11 +127,11 @@
 #### 操作方法
 
 1. **学术文献系统性综述**
-   调用 `academic-research-suite` 的文献综述能力，输出结构化综述与研究缺口。
+   调用 `deep-research` 的 lit-review 模式，输出结构化综述与研究缺口。
 
    指令示例：
 
-   > /academic-research-suite: 针对「恶意 AI Agent 网络流量检测」做系统性文献综述
+   用 ars-suite 的 deep-research: 针对「恶意 AI Agent 网络流量检测」做系统性文献综述
    > 重点覆盖：
    > 1. 传统网络入侵检测的流量特征工程方法
    > 2. LLM/Agent 通信流量的特性与识别现状
@@ -139,7 +139,7 @@
    > 要求标注文献出处，区分顶会/顶刊与其他工作，输出研究缺口矩阵
 
 2. **细分方向深度调研（推荐执行）**
-   针对特定子方向调用 `research-codex` 执行两阶段调研，先输出纲要再深度展开。
+   针对特定子方向调用 `deep-research` 执行两阶段调研，先输出纲要再深度展开。
 
    指令示例：
 
@@ -182,24 +182,24 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `academic-research-suite` | 直接调用 | 生成全要素研究方案框架（背景、方法、实验、计划） |
-| `nature-skills` | 直接调用 | **提前规划实验图表**：确定每张图展示什么、需要什么数据 |
+| `ars-suite` | 直接调用 | 生成全要素研究方案框架（背景、方法、实验、计划） |
+| `academic-figure` | 直接调用 | **提前规划实验图表**：确定每张图展示什么、需要什么数据 |
 | `planning-with-files` | 直接调用 | 更新项目里程碑，拆解实现子任务 |
 | `neat-freak` | `/neat` | 阶段收尾 |
 
-> **nature-skills 为什么在阶段三介入？** 图表不是"实验做完后画什么"的问题，而是"我要论证什么→需要什么图→必须跑什么实验→采集什么数据"的逆向设计。
+> **图表规划为什么在阶段三介入？** 图表不是"实验做完后画什么"的问题，而是"我要论证什么→需要什么图→必须跑什么实验→采集什么数据"的逆向设计。
 > 在方案设计阶段规划好图表骨架，可以避免做完实验才发现缺少关键对比维度。
 >
-> **关于方案可行性校验**：方案的合理性论证（方法是否成立、实验是否公平、基线是否合理）由 `academic-research-suite` 在方案设计过程中完成，并由研究者在 Human-in-Loop 环节做最终判断。
+> **关于方案可行性校验**：方案的合理性论证（方法是否成立、实验是否公平、基线是否合理）由 `ars-suite` 在方案设计过程中完成，并由研究者在 Human-in-Loop 环节做最终判断。
 
 #### 操作方法
 
 1. **方案整体架构设计**
-   调用 `academic-research-suite` 输出覆盖全要素的研究方案框架。
+   调用 `ars-suite` 中的对应子技能 输出覆盖全要素的研究方案框架。
 
    指令示例：
 
-   > /academic-research-suite: 基于前面的文献综述与威胁模型，设计完整的研究方案
+   用 ars-suite 的 deep-research: 基于前面的文献综述与威胁模型，设计完整的研究方案
    > 方案需包含：
    > 1. 研究背景与问题挑战
    > 2. 方法整体架构与核心模块划分
@@ -209,11 +209,11 @@
    > 研究方向：基于多特征融合的恶意 Agent 流量检测
 
 2. **图表预规划**
-   调用 `nature-skills`，在设计实验之前明确图表布局。
+   调用 `academic-figure`，在设计实验之前明确图表布局。
 
    指令示例：
 
-   > 用 nature-figure 技能帮我规划这篇论文需要哪些图表
+   > 用 academic-figure 技能帮我规划这篇论文需要哪些图表
    > 方法涉及：多特征融合 + 图神经网络 + 对比预训练
    > 列出每张图的：展示目的、所需数据、对比维度
    > 确保图表之间逻辑互补，不重复
@@ -323,7 +323,7 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `nature-skills` | 直接调用 | 基于阶段三的图表规划，生成符合顶会规范的正式图表 |
+| `academic-figure` | 直接调用 | 基于阶段三的图表规划，生成符合顶会规范的正式图表 |
 | `planning-with-files` | 直接调用 | 跟踪实验进度，记录每组实验的超参数与结果 |
 | `neat-freak` | `/neat` | 阶段收尾归档 |
 
@@ -342,11 +342,11 @@
    - 鲁棒性测试：验证不同流量场景、攻击变体下的检测效果
 
 3. **实验结果可视化**
-   调用 `nature-skills`，基于阶段三的图表规划生成正式图表。
+   调用 `academic-figure`，基于阶段三的图表规划生成正式图表。
 
    指令示例：
 
-   > 用 nature-figure 技能，按照阶段三确定的图表规划生成正式图表
+   > 用 academic-figure 技能，按照阶段三确定的图表规划生成正式图表
    > 包括：检测性能对比柱状图、ROC 曲线、消融实验结果表、场景性能热力图
    > 符合安全顶会图表规范，标注清晰，信息完整
 
@@ -393,7 +393,7 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `academic-research-suite` | `/ars-review` | 对标安全顶会标准做全维度评审，输出分级修改意见 |
+| `ars-suite` | `academic-paper-reviewer` | 对标安全顶会标准做全维度评审，输出分级修改意见 |
 
 #### 操作方法
 
@@ -402,7 +402,7 @@
 
    指令示例：
 
-   > /academic-research-suite: 以 IEEE S&P 审稿人的身份，对我的研究做全面评审
+   用 ars-suite 的 deep-research: 以 IEEE S&P 审稿人的身份，对我的研究做全面评审
    > 评审内容：
    > 1. 研究问题的重要性与创新性
    > 2. 实验设计的严谨性：数据集合理性、基线对比公平性、评价指标全面性
@@ -442,8 +442,8 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `academic-research-suite` | 直接调用 | 分章节写作逻辑校验（引言、相关工作、方法、实验、讨论） |
-| `nature-skills` | 直接调用 | 图表规范最终校验：格式、标注、引用、灰度兼容 |
+| `ars-suite` | 直接调用 | 分章节写作逻辑校验（引言、相关工作、方法、实验、讨论） |
+| `academic-figure` | 直接调用 | 图表规范最终校验：格式、标注、引用、灰度兼容 |
 | `unslop` | 直接调用 | 语言去 AI 化润色，保留专业术语，移除 AI 写作痕迹 |
 | `neat-freak` | `/neat` | 阶段收尾，同步论文稿件到项目文档 |
 
@@ -454,7 +454,7 @@
 
    指令示例（方法章节）：
 
-   > /academic-research-suite: 检查我的 Methodology 章节逻辑
+   用 ars-suite 的 deep-research: 检查我的 Methodology 章节逻辑
    > [粘贴章节草稿]
    > 检查：整体架构到模块细节的递进是否自然、核心创新点是否突出、技术描述是否准确
    > 给出修改建议
@@ -463,7 +463,7 @@
    > 若在写作过程中发现阶段五未暴露的逻辑漏洞，应回到阶段五或直接补充论证。
 
 2. **图表规范校验**
-   调用 `nature-skills` 检查所有图表的格式、标注、引用是否符合顶会要求（分辨率 ≥300dpi、字体 ≥8pt、灰度打印可区分、统计显著性标注）。
+   调用 `academic-figure` 检查所有图表的格式、标注、引用是否符合顶会要求（分辨率 ≥300dpi、字体 ≥8pt、灰度打印可区分、统计显著性标注）。
 
 3. **语言去AI化润色**
    调用 `unslop` 逐段润色，保留专业术语，移除AI写作痕迹。
@@ -516,7 +516,7 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `academic-research-suite` | 直接调用 | 梳理审稿意见回复思路，区分实验补充/文字修改/说明解释 |
+| `ars-suite` | 直接调用 | 梳理审稿意见回复思路，区分实验补充/文字修改/说明解释 |
 | `neat-freak` | `/neat` | 全量项目归档 |
 
 #### 操作方法
@@ -526,13 +526,13 @@
 
    指令示例：
 
-   > /academic-research-suite: 梳理这几条审稿意见的回复思路
+   用 ars-suite 的 deep-research: 梳理这几条审稿意见的回复思路
    > [粘贴审稿意见]
    > 要求：每条意见对应明确的回复点与修改方案，区分实验补充、文字修改、说明解释三类
    > 回复语气礼貌专业
 
 2. **返修内容校验**
-   补充实验、修改论文后，再次调用 `/ars-review` 模拟审稿功能校验修改效果——
+   补充实验、修改论文后，再次调用 `academic-paper-reviewer` 模拟审稿功能校验修改效果——
    **重点检查每条审稿意见是否被充分响应**。
 
 3. **最终项目归档**
