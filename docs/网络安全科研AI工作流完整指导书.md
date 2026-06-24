@@ -1,8 +1,8 @@
 # 网络安全科研AI工作流完整指导书
 
-**适用领域**：网络安全、流量分析、日志分析、入侵检测、AI Agent安全、恶意Agent检测等方向
+**适用领域**：网络安全、加密流量分类、ML安全、协议分析、入侵检测等方向的学术研究
 
-**核心定位**：本工作流基于Codex Skill体系构建，AI承担机械性、流程性、校验性工作，核心研究判断由研究者主导，保障科研严谨性与学术合规性。
+**核心定位**：本工作流基于 Claude Code Skills 体系构建，AI 承担机械性、流程性、校验性工作，核心研究判断由研究者主导，保障科研严谨性与学术合规性。Skills 已从初始 63 个精简至 15 个——只保留科研通用能力，领域专项工具（威胁情报、网络流量处理、代码安全审计）已移除，由 AI 原生能力替代。
 
 **配套文件**：
 - **[网络安全科研AI工作流速查表](./网络安全科研AI工作流速查表.md)**：日常操作的快速索引，每进入新阶段先查表确认所需 Skill
@@ -10,27 +10,32 @@
 
 ---
 
-## 一、推荐Skill清单
+## 一、推荐Skill清单（15个）
 
-### 1.1 必装核心套件
+### 1.1 核心科研流程（6个）
 
 | Skill 名称 | GitHub 地址 | 核心用途 |
 |------------|-------------|----------|
-| `academic-research-suite` | [github.com/imbad0202/academic-research-skills-codex](https://github.com/Imbad0202/academic-research-skills-codex) | 全流程科研主干：文献综述、方案论证、模拟审稿、写作逻辑校验 |
-| `Anthropic-Cybersecurity-Skills` | [github.com/mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) | 网安领域基础能力：MITRE ATLAS/ATT&CK 映射（`threat-intelligence`）、流量分析与威胁狩猎（`threat-hunting`）、AI安全风险评估 |
+| `academic-research-suite` | [github.com/imbad0202/academic-research-skills-codex](https://github.com/Imbad0202/academic-research-skills-codex) | 全流程科研主干：/ars-plan 选题、/ars-lit-review 文献综述、/ars-review 模拟审稿、写作逻辑校验 |
 | `planning-with-files` | [github.com/OthmanAdi/planning-with-files](https://github.com/othmanadi/planning-with-files) | 长任务持久化计划，跨会话不丢失进度 |
-| `neat-freak` | [github.com/KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) | 阶段收尾同步文档、代码与Agent记忆 |
+| `neat-freak` | [github.com/KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) | /neat 阶段收尾同步文档、代码与 Agent 记忆 |
+| `unslop` | [github.com/MohamedAbdallah-14/unslop](https://github.com/MohamedAbdallah-14/unslop) | 去 AI 写作痕迹，5 级强度可调，保留代码/URL/表格 |
+| `unslop-file` | （本仓库自带） | Markdown 文件人性化（计划、文档等） |
+| `research-codex` | [github.com/Weizhena/Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills) | 结构化深度文献调研（两阶段：纲要→深度展开→汇总报告） |
 
-### 1.2 专项增强套件
+### 1.2 论文写作套件（7个）
 
-| Skill 名称 | GitHub 地址 | 核心用途 | 适用条件 |
-|------------|-------------|----------|----------|
-| `trailofbits/skills` | [github.com/trailofbits/skills](https://github.com/trailofbits/skills) | 静态代码分析、代码安全审计；YARA 规则编写 | **条件使用**：YARA 仅适用于恶意软件/Indicator-based 检测方向；静态分析在阶段四.2（正式实验完成后）使用 |
-| `briiirussell/cybersecurity-skills` | [github.com/briiirussell/cybersecurity-skills](https://github.com/briiirussell/cybersecurity-skills) | Sigma 规则编写、检测工程、SIEM 适配 | **条件使用**：仅适用于检测工程/SOC 运营方向，不适用于 ML 模型创新、密码学、形式化验证等方向 |
-| `Masriyan/Claude-Code-CyberSecurity-Skill` | [github.com/Masriyan/Claude-Code-CyberSecurity-Skill](https://github.com/Masriyan/Claude-Code-CyberSecurity-Skill) | 日志分析专项、蓝队防御、异常检测模板 | 适用于需要处理 Zeek/Suricata 等日志的研究 |
-| `Deep-Research-skills` | [github.com/Weizhena/Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills) | 结构化深度文献调研，支持人在环路控制方向 | 推荐在阶段二使用，尤其是研究者对新方向不够熟悉时 |
-| `nature-skills` | [github.com/Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | 顶刊顶会图表规范校验、写作逻辑优化 | 阶段三参与图表规划，阶段四.2 执行图表生成，阶段六做最终校验 |
-| `unslop` | [github.com/ComposioHQ/awesome-codex-skills](https://github.com/ComposioHQ/awesome-codex-skills) | 去AI写作痕迹，5级强度可调，学术场景合规 | 仅用于阶段六语言润色，禁止用于规避 AI 检测 |
+| Skill 名称 | GitHub 地址 | 核心用途 |
+|------------|-------------|----------|
+| `nature-figure` | [github.com/Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | 顶会图表规范校验与生成（阶段三图表规划→阶段四.2 生成→阶段六最终校验） |
+| `nature-writing` | 同上 | 论文章节写作优化 |
+| `nature-polishing` | 同上 | 语言抛光与学术表达优化 |
+| `nature-citation` | 同上 | 引用格式规范化 |
+| `nature-data` | 同上 | 实验数据展示规范 |
+| `nature-paper2ppt` | 同上 | 论文转演示文稿 |
+| `nature-response` | 同上 | 审稿意见回复辅助 |
+
+> **关于已移除的 Skills**：原指导书中的 `Anthropic-Cybersecurity-Skills`（威胁情报/流量狩猎）、`trailofbits/skills`（静态分析/YARA）、`briiirussell/cybersecurity-skills`（Sigma/检测工程）、`Masriyan/Claude-Code-CyberSecurity-Skill`（日志分析）等 48 个 Skill 已从本仓库移除。这些 Skill 用于检测工程、恶意软件分析、SOC 运营等方向，对加密流量分类/ML 方法创新等研究方向并非必需。实验数据处理、代码审查、威胁建模等能力由 AI 原生能力替代，无需专用 Skill。
 
 ---
 
@@ -69,7 +74,7 @@
    指令示例：
 
    > 用 planning-with-files 初始化研究项目计划，包含以下里程碑：
-   > 1. 文献综述与威胁建模完成
+   > 1. 文献综述完成
    > 2. 完整研究方案设计完成
    > 3. 小规模原型验证完成
    > 4. 大规模实验与结果分析完成
@@ -105,22 +110,19 @@
 
 ---
 
-### 阶段二：系统性文献调研与威胁建模
+### 阶段二：系统性文献调研
 
-**触发时机**：研究问题明确后，系统性梳理相关工作、技术体系与威胁场景。
+**触发时机**：研究问题明确后，系统性梳理相关工作与技术体系。
 
 #### 使用Skills
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
 | `academic-research-suite` | `/ars-lit-review` | 系统性文献综述，输出结构化综述与研究缺口矩阵 |
-| `Deep-Research-skills` | 直接调用 | （推荐使用）两阶段深度调研：先纲要确认，再逐项展开 |
-| `Anthropic-Cybersecurity-Skills` | `threat-intelligence` 子能力 | 威胁框架映射（MITRE ATLAS/ATT&CK），梳理攻击手法与检测盲区 |
+| `research-codex` | 直接调用 | 两阶段深度调研：先纲要确认，再逐项展开 |
 | `neat-freak` | `/neat` | 阶段收尾 |
 
-> **关于威胁建模的适用范围**：MITRE ATLAS/ATT&CK 映射适用于检测、攻防、恶意软件分析等方向。
-> 若研究方向为密码协议、形式化验证、隐私增强技术等，威胁建模应以该领域的理论威胁模型（如 Dolev-Yao、UC 模型）替代，
-> 此步骤中的 `Anthropic-Cybersecurity-Skills` 可跳过或用其他工具替代。
+> **关于威胁建模**：检测、攻防、恶意软件分析等方向可能需要 MITRE ATT&CK 威胁框架映射或领域威胁模型（如 Dolev-Yao、UC 模型），这部分由 AI 原生能力辅助完成。加密流量分类等 ML 方法创新方向通常不需要独立的威胁建模步骤。
 
 #### 操作方法
 
@@ -137,24 +139,14 @@
    > 要求标注文献出处，区分顶会/顶刊与其他工作，输出研究缺口矩阵
 
 2. **细分方向深度调研（推荐执行）**
-   针对特定子方向调用 `Deep-Research-skills` 执行两阶段调研，先输出纲要再深度展开。
+   针对特定子方向调用 `research-codex` 执行两阶段调研，先输出纲要再深度展开。
 
    指令示例：
 
    > 用 research skill 先生成「恶意 Agent C2 通信手法」的调研纲要
    > 确认纲要后再逐项做深度调查，整理技术细节与公开数据集
 
-3. **威胁框架与技术体系梳理**
-   调用 `Anthropic-Cybersecurity-Skills` 的 `threat-intelligence` 子能力，对齐行业标准框架，完成威胁建模。
-
-   指令示例：
-
-   > 用 threat-intelligence 技能梳理恶意 LLM Agent 的攻击手法
-   > 映射到 MITRE ATLAS v5.4 框架，重点标注：
-   > - Agent 工具调用滥用、上下文投毒、MCP 服务端攻陷对应的流量特征
-   > - 传统 IDS 对这些手法的检测盲区
-
-4. **阶段收尾**
+3. **阶段收尾**
    执行 `/neat` 同步文献核心结论与威胁模型到项目文档与记忆。
 
 #### Human-in-Loop环节
@@ -169,13 +161,11 @@
 - [ ] 文献综述表覆盖 ≥30 篇核心论文，至少 60% 来自 CCF-A/B 或同等水平会议/期刊
 - [ ] 每篇文献均经人工核实：论文真实存在、出处准确、摘要与你方向相关
 - [ ] 研究缺口矩阵中有 ≥3 个明确缺口，且你有能力填补其中至少 1 个
-- [ ] 威胁模型（MITRE ATLAS 或其他领域模型）与你的研究问题直接相关，不是泛泛映射
 
 #### 预期产出
 
 - 结构化文献综述表与研究缺口分析报告
 - 细分方向深度技术调研报告
-- 威胁场景-流量特征-检测盲区对应矩阵
 
 #### 可能的回退
 
@@ -193,13 +183,14 @@
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
 | `academic-research-suite` | 直接调用 | 生成全要素研究方案框架（背景、方法、实验、计划） |
-| `Anthropic-Cybersecurity-Skills` | `threat-intelligence` 子能力 | 从网安实战角度评估方案可行性与可绕过风险 |
 | `nature-skills` | 直接调用 | **提前规划实验图表**：确定每张图展示什么、需要什么数据 |
 | `planning-with-files` | 直接调用 | 更新项目里程碑，拆解实现子任务 |
 | `neat-freak` | `/neat` | 阶段收尾 |
 
 > **nature-skills 为什么在阶段三介入？** 图表不是"实验做完后画什么"的问题，而是"我要论证什么→需要什么图→必须跑什么实验→采集什么数据"的逆向设计。
 > 在方案设计阶段规划好图表骨架，可以避免做完实验才发现缺少关键对比维度。
+>
+> **关于方案可行性校验**：方案的合理性论证（方法是否成立、实验是否公平、基线是否合理）由 `academic-research-suite` 在方案设计过程中完成，并由研究者在 Human-in-Loop 环节做最终判断。
 
 #### 操作方法
 
@@ -227,21 +218,10 @@
    > 列出每张图的：展示目的、所需数据、对比维度
    > 确保图表之间逻辑互补，不重复
 
-3. **领域适配性校验**
-   调用 `Anthropic-Cybersecurity-Skills` 的 `threat-intelligence` 子能力，从网安实战角度评估方案。
+3. **方案迭代与计划更新**
+   根据设计过程中发现的问题优化方案，调用 `planning-with-files` 更新项目里程碑，拆解详细实现子任务。
 
-   指令示例：
-
-   > 用 threat-intelligence 技能，从网络流量检测的专业角度评估这套方案的可行性
-   > 重点检查：
-   > - 流量特征选取是否合理、是否可在真实环境中采集
-   > - 检测模型是否适配高带宽、低延迟的 IDS 场景
-   > - 是否存在明显的可绕过风险
-
-4. **方案迭代与计划更新**
-   根据校验结果优化方案，调用 `planning-with-files` 更新项目里程碑，拆解详细实现子任务。
-
-5. **阶段收尾**
+4. **阶段收尾**
    执行 `/neat` 同步最终方案到项目文档。
 
 #### Human-in-Loop环节
@@ -257,7 +237,6 @@
 - [ ] 方法与每个研究问题（RQ）之间有明确的对应关系
 - [ ] 实验设计可被第三方独立复现（数据集公开或可申请、评价指标标准、基线方法可获取）
 - [ ] 图表规划已完成：每张图的横纵坐标、对比维度、预期信息已明确
-- [ ] 方案已通过领域可行性校验，已知风险有缓解措施
 
 #### 预期产出
 
@@ -283,22 +262,19 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `Masriyan/Claude-Code-CyberSecurity-Skill` | 直接调用 | 日志分析模板（适用于 Zeek/Suricata 等日志处理） |
-| `Anthropic-Cybersecurity-Skills` | `threat-hunting` 子能力 | 小规模流量数据处理与特征提取验证 |
 | `planning-with-files` | 直接调用 | 跟踪原型进度，记录问题与优化方向 |
 | `neat-freak` | `/neat` | 子阶段收尾 |
 
-> **关于 `trailofbits/skills`**：原型阶段不需要深度代码审计，仅需保证代码结构清晰、可扩展。
-> 正式的静态分析留到阶段四.2 实验完成后执行。
+> **代码实现阶段以 AI 原生能力为主**：模块化代码架构设计、特征提取逻辑实现、基线模型跑通等核心编码工作，由 Claude 直接辅助完成，无需专用 Skill。
 
 ##### 操作方法
 
 1. **代码架构设计与核心模块实现**
-   参考网安开发最佳实践，设计模块化的检测系统代码框架。
+   设计模块化的代码框架，直接与 Claude 对话完成。
 
    指令示例：
 
-   > 参考 Zeek 日志分析最佳实践，设计检测系统的代码架构
+   > 设计检测系统的代码架构
    > 模块划分：数据预处理、特征提取、检测模型、结果评估
    > 语言：Python，要求模块化、可扩展、便于消融实验
 
@@ -307,8 +283,7 @@
 
    指令示例：
 
-   > 用 threat-hunting 技能辅助处理小规模 Zeek 日志
-   > 提取设计的流量特征，验证特征提取逻辑正确性
+   > 用这个小规模数据集验证特征提取逻辑
    > 跑通基线模型与目标方法，初步查看检测效果
 
 3. **进度更新与问题记录**
@@ -346,30 +321,19 @@
 
 ##### 使用Skills
 
-| Skill | 调用方式 | 用途 | 适用条件 |
-|-------|----------|------|----------|
-| `Anthropic-Cybersecurity-Skills` | `threat-hunting` 子能力 | 大规模日志处理、结果统计分析 | 通用 |
-| `nature-skills` | 直接调用 | 基于阶段三的图表规划，生成符合顶会规范的正式图表 | 通用 |
-| `planning-with-files` | 直接调用 | 跟踪实验进度，记录每组实验的超参数与结果 | 通用 |
-| `neat-freak` | `/neat` | 阶段收尾归档 | 通用 |
-| `trailofbits/skills` | `static-analysis` 子能力 | 实验代码静态审计，确保可复现性 | **条件使用**：仅用于正式实验完成后的代码审计，不包含 YARA 规则编写 |
-| `trailofbits/skills` | YARA 规则编写 | 优化恶意软件检测规则 | **条件使用**：仅适用于恶意软件/Indicator-based 检测方向 |
-| `briiirussell/cybersecurity-skills` | Sigma 规则/检测工程 | 优化检测规则、降低误报率 | **条件使用**：仅适用于检测工程/SOC/SIEM 方向 |
+| Skill | 调用方式 | 用途 |
+|-------|----------|------|
+| `nature-skills` | 直接调用 | 基于阶段三的图表规划，生成符合顶会规范的正式图表 |
+| `planning-with-files` | 直接调用 | 跟踪实验进度，记录每组实验的超参数与结果 |
+| `neat-freak` | `/neat` | 阶段收尾归档 |
 
-> **条件使用的含义**：标有「条件使用」的 Skill 不是每个研究项目都需要。
-> 例如：
-> - 做「基于 GNN 的加密流量分类」→ 不需要 YARA、不需要 Sigma 规则
-> - 做「基于 Sigma 规则的 APT 检测优化」→ 需要 `briiirussell/cybersecurity-skills`
-> - 做「恶意软件 C2 流量检测 + YARA 规则自动生成」→ 需要 `trailofbits/skills` 的 YARA 能力
->
-> 请根据你的具体研究方向判断是否启用，**不要为了用 Skill 而用 Skill**。
+> **代码审计由 AI 原生能力完成**：随机种子固定、数据划分合理性、基线复现正确性等检查，直接在 Claude 对话中完成，无需专用 Skill。
+> "帮我检查实验代码：随机种子是否固定？数据划分是否有泄露？每个基线方法的超参数是否与原论文一致？"
 
 ##### 操作方法
 
-1. **方法优化与规则调优**
-   - 通用方法调优：针对模型超参数、特征权重进行调优，提升核心性能指标
-   - 规则类优化（条件执行）：若涉及 YARA/Sigma 检测规则，调用对应 Skill 优化规则，降低误报率
-   - 每次调优后调用 `planning-with-files` 记录超参数变更与结果
+1. **方法优化与超参数调优**
+   针对模型超参数、特征权重进行调优，提升核心性能指标。每次调优后调用 `planning-with-files` 记录超参数变更与结果。
 
 2. **大规模完整实验**
    在完整数据集上执行三类实验：
@@ -386,16 +350,7 @@
    > 包括：检测性能对比柱状图、ROC 曲线、消融实验结果表、场景性能热力图
    > 符合安全顶会图表规范，标注清晰，信息完整
 
-4. **代码审计与可复现性校验（实验完成后执行）**
-   调用 `trailofbits/skills` 的 `static-analysis` 子能力做静态代码审计。
-
-   指令示例：
-
-   > 用 static-analysis 技能对实验代码做审计
-   > 检查：代码逻辑正确性、输入输出一致性、随机种子固定、数据集划分合理性
-   > 确保实验结果可复现
-
-5. **阶段收尾**
+4. **阶段收尾**
    执行 `/neat` 同步代码、实验结果、图表到项目归档。
 
 ##### Human-in-Loop环节
@@ -403,21 +358,20 @@
 - 人工确认实验数据集的划分与基线选取的公平性
 - 人工解读实验结果，分析异常数据与性能波动原因——**不只看均值，也要看方差和异常点**
 - 人工审核图表的信息准确性与表达合理性
-- 人工确认代码审计问题的修复方案
+- 人工确认代码可复现性：随机种子固定、数据划分无泄露、基线实现与原论文一致
 
 ##### 阶段完成标准
 
 - [ ] 三类实验（对比、消融、鲁棒性）全部完成，每组实验 ≥3 次重复
 - [ ] 实验结果回答了阶段一提出的每个研究问题
 - [ ] 所有图表基于阶段三的规划生成，无遗漏、无冗余
-- [ ] 代码审计通过：随机种子固定、数据划分无泄露、基线实现与原论文一致
 - [ ] 原始实验数据已保存，可从原始数据重新生成所有图表和结论
 
 ##### 预期产出
 
 - 完整实验数据集与原始结果
 - 符合顶会规范的实验图表集
-- 代码审计报告与可复现性说明
+- 可复现性说明文档
 
 ##### 可能的回退
 
@@ -440,7 +394,6 @@
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
 | `academic-research-suite` | `/ars-review` | 对标安全顶会标准做全维度评审，输出分级修改意见 |
-| `Anthropic-Cybersecurity-Skills` | `threat-intelligence` 子能力 | 从攻击者视角做对抗性分析，查检测盲区 |
 
 #### 操作方法
 
@@ -457,34 +410,20 @@
    > 4. 核心结论是否有足够证据支撑
    > 分 Major/Minor 给出修改意见
 
-2. **网安专项安全校验**
-   调用 `Anthropic-Cybersecurity-Skills` 的 `threat-intelligence` 子能力，从攻击者视角审视方案。
-
-   指令示例：
-
-   > 用 threat-intelligence 技能，参照 NIST AI RMF 与 MITRE ATLAS 框架，评估这套检测方案的安全风险
-   > 重点分析：
-   > 1. 哪些攻击手法可以绕过当前检测规则/模型
-   > 2. 攻击者可通过哪些流量伪装手段规避检测
-   > 3. 方案在真实部署场景下的实用性缺陷
-
 #### Human-in-Loop环节
 
 - 人工评估审稿意见的合理性，按严重程度和对论文命运的影响排序
-- 人工判断检测盲区与对抗风险的严重程度，确定是否补充实验
 - 人工敲定最终修改方案与补充实验范围——**不是所有意见都必须采纳，但要能解释为什么不采纳**
 
 #### 阶段完成标准
 
 - [ ] 模拟审稿意见已覆盖 ≥4 个评审维度（创新性、实验严谨性、局限性讨论、证据充分性）
 - [ ] 每条 Major 意见都有明确的响应：要么补充实验/修改方案，要么有充分的辩护理由
-- [ ] 安全校验已识别 ≥2 个潜在攻击向量或检测盲区
 - [ ] 补充实验清单已确定，且在阶段四.2 的实验框架内可执行
 
 #### 预期产出
 
 - 结构化审稿意见（Major/Minor 分级）
-- 检测盲区与对抗风险分析报告
 - 修改任务清单与优先级排序
 
 #### 可能的回退
@@ -634,7 +573,7 @@
 ## 三、通用使用原则
 
 1. **人工主导原则**：AI 仅承担机械性、辅助性工作，研究问题定义、方法创新、结论解释、投稿决策等核心判断必须由研究者完成。
-2. **按需启用原则**：核心套件全程启用，专项套件仅在对应阶段调用。**条件使用的 Skill 要根据自己的研究方向判断是否需要，不为了用 Skill 而用 Skill**。
+2. **精简原则**：本仓库仅保留 15 个科研通用 Skill。代码实现、数据处理、代码审查等由 AI 原生能力完成，无需专用 Skill。
 3. **学术合规原则**：所有 AI 生成内容必须人工核查，严格遵守目标会议的 AI 工具使用政策。`unslop` 仅用于语言优化，禁止用于规避 AI 检测。
 4. **定期归档原则**：每完成一个阶段执行一次 `/neat` 归档，避免长周期项目出现信息断层与文档脱节。
 5. **迭代常态原则**：阶段之间的回退不是失败——在审稿前自己发现并修复问题，远比投稿后被拒稿高效。每个阶段末尾的回退路径不是装饰，是真实科研的必经之路。
