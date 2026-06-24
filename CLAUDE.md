@@ -8,7 +8,7 @@ A **Claude Code Skills collection** for academic cybersecurity research — 15 c
 
 ## Context Cost
 
-15 skills, ~4,100 tokens constant context (frontmatter only). Bodies load on demand.
+16 SKILL.md files (15 skills + ars-suite router), ~5,700 tokens constant context (frontmatter only). Bodies load on demand.
 
 ## Directory Structure
 
@@ -36,7 +36,9 @@ ars-suite/            # Multi-skill suite (shared infrastructure)
 `ars-suite/*`: `deep-research` (13-agent, 8 modes), `academic-paper` (12-agent, 11 modes, IEEE/APA/MLA/Chicago/Vancouver), `academic-paper-reviewer` (5-reviewer simulation), `academic-pipeline` (10-stage orchestrator)
 
 ### Paper Writing (7)
-`academic-figure`, `paper-writing`, `paper-polishing`, `targeted-citation`, `data-availability`, `paper2ppt`, `reviewer-response`
+`academic-figure`, `paper-writing` (draft from scratch, claims→prose), `paper-polishing` (polish existing prose + LaTeX layout), `targeted-citation`, `data-availability`, `paper2ppt`, `reviewer-response`
+
+> **Boundary rule**: `paper-writing` drafts first drafts from notes/figures/results; `paper-polishing` improves already-written prose; `ars-suite/academic-paper` is the heavy 12-agent full pipeline with lit search + formatting. Each skill's `description` field now declares its NOT-trigger scope.
 
 ### Core Workflow (4)
 `planning-with-files`, `neat-freak`, `unslop`, `unslop-file`

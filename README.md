@@ -34,8 +34,8 @@ git clone git@github.com:pamisu/research-workflow-skills.git ~/.claude/skills/
 | Skill | 用途 |
 |-------|------|
 | `academic-figure` | 顶会图表规范校验与生成 |
-| `paper-writing` | 论文章节写作优化 |
-| `paper-polishing` | 语言抛光与学术表达优化 |
+| `paper-writing` | 论文起草与框架搭建（从笔记/图表/结果写初稿，非润色） |
+| `paper-polishing` | 语言抛光与学术表达优化（润色已有文本 + LaTeX 排版） |
 | `targeted-citation` | CS/安全顶会定向引用 |
 | `data-availability` | 实验数据可用性声明 |
 | `paper2ppt` | 论文转演示文稿 |
@@ -60,7 +60,7 @@ git clone git@github.com:pamisu/research-workflow-skills.git ~/.claude/skills/
 用 unslop 润色这段论文内容，强度等级 3...
 ```
 
-**上下文成本**：15 个 Skills，仅元数据 ~4,100 tokens。不调用不加载 body。
+**上下文成本**：16 个 SKILL.md（15 个技能 + ars-suite 路由），仅元数据 ~5,700 tokens。不调用不加载 body。
 
 ## 精简历程
 
@@ -70,6 +70,6 @@ git clone git@github.com:pamisu/research-workflow-skills.git ~/.claude/skills/
 | v1 | 40 | ~8,800 | 重叠/niche/SOC/通用模板/非科研工具 |
 | v2 | 31 | ~7,500 | 辅助 skill、功能重叠 |
 | v3 | 22 | ~5,900 | 网络流量、代码安全 |
-| v4 | 15 | ~4,100 | 威胁情报、nature-*品牌化 |
-| v5 | **15** | **~4,100** | nature-*→通用化、Codex ARS→Claude ARS、清除多语言冗余 |
+| v4 | 15 | ~5,700 | 威胁情报、nature-*品牌化 |
+| v5 | **15** | **~5,700** | nature-*→通用化、Codex ARS→Claude ARS、清除多语言冗余 |
 | **累计** | **-76%** | **-67%** | |

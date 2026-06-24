@@ -1,6 +1,15 @@
 ---
 name: academic-paper
-description: "12-agent academic paper writing pipeline. 11 modes (full/plan/outline/revision/revision-coach/abstract/lit-review/format-convert/citation-check/disclosure/rebuttal-audit). 6 paper types, 5 citation formats, bilingual abstracts, LaTeX/DOCX-via-Pandoc/PDF output. Style Calibration + Writing Quality Check + Anti-Patterns with IRON RULE markers. Triggers: write paper, academic paper, guide my paper, parse reviews, audit my rebuttal, check my response draft, AI disclosure, 寫論文, 學術論文, 引導我寫論文, 審查意見, 評估回覆."
+description: >-
+  12-agent academic paper writing pipeline for full end-to-end paper generation
+  including literature search, architecture design, drafting, peer review, and
+  formatting. 11 modes, 6 paper types, 5 citation formats (APA/Chicago/MLA/IEEE/
+  Vancouver), bilingual abstracts, LaTeX/DOCX-via-Pandoc/PDF output. NOT for
+  lightweight single-section drafting (use paper-writing) or prose polishing
+  (use paper-polishing). Triggers: write a complete paper, full paper pipeline,
+  end-to-end paper, guided paper writing, AI disclosure statement, rebuttal
+  audit, 寫完整論文, 全文寫作, 學術論文全流程, 引導我寫論文, 審查意見,
+  評估回覆.
 metadata:
   version: "3.2.0"
   last_updated: "2026-06-01"
