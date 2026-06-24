@@ -12,30 +12,58 @@
 
 ## 一、推荐Skill清单（15个）
 
-### 1.1 核心科研流程（6个）
+### 1.1 学术研究套件 — ars-suite（含 4 个子技能，CC-BY-NC 4.0）
 
-| Skill 名称 | GitHub 地址 | 核心用途 |
-|------------|-------------|----------|
-| `ars-suite` | [github.com/Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills-codex) | 全流程科研主干：deep-research socratic 选题、deep-research lit-review 文献综述、academic-paper-reviewer 模拟审稿、写作逻辑校验 |
-| `planning-with-files` | [github.com/OthmanAdi/planning-with-files](https://github.com/othmanadi/planning-with-files) | 长任务持久化计划，跨会话不丢失进度 |
-| `neat-freak` | [github.com/KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) | /neat 阶段收尾同步文档、代码与 Agent 记忆 |
-| `unslop` | [github.com/MohamedAbdallah-14/unslop](https://github.com/MohamedAbdallah-14/unslop) | 去 AI 写作痕迹，5 级强度可调，保留代码/URL/表格 |
-| `unslop-file` | （本仓库自带） | Markdown 文件人性化（计划、文档等） |
-| `deep-research` | [github.com/Weizhena/Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills) | 结构化深度文献调研（两阶段：纲要→深度展开→汇总报告） |
+`ars-suite` 来自 [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills)（Claude 原生版），精简为 zh-CN + en。调用时通过 `/ars-suite` 路由到子技能，也可直接用子技能名触发（如 `deep-research`、`academic-paper`）。
 
-### 1.2 论文写作套件（7个）
+| 子技能 | 版本 | 核心用途 |
+|--------|------|----------|
+| `deep-research` | v2.11.0 | 13-agent 深度文献调研，8 种模式（全流程研究/快速简报/论文评审/文献综述/事实核查/三段式文献扫描/Socratic引导/系统综述+Meta分析） |
+| `academic-paper` | v3.2.0 | 12-agent 论文全流程写作，11 种模式，6 种论文类型，5 种引用格式（IEEE/APA/MLA/Chicago/Vancouver），含文献搜索+引用格式化+自查 |
+| `academic-paper-reviewer` | v1.10.0 | 5 审稿人模拟（EIC + 3 位 peer reviewer + Devil's Advocate），支持全审/重审/快速评估/方法论聚焦/Socratic引导/校准模式 |
+| `academic-pipeline` | v3.13.0 | 10 阶段全流程编排器：研究→写作→完整性校验→审稿→返修→重审→再修订→终审→定稿 |
 
-| Skill 名称 | GitHub 地址 | 核心用途 |
-|------------|-------------|----------|
-| `academic-figure` | [github.com/Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | 顶会图表规范校验与生成（阶段三图表规划→阶段四.2 生成→阶段六最终校验） |
-| `paper-writing` | 同上 | 论文起草与框架搭建（从笔记/图表/实验结果写初稿，非润色） |
-| `paper-polishing` | 同上 | 语言抛光与学术表达优化（润色已有文本 + LaTeX 排版修复） |
-| `targeted-citation` | 同上 | 引用格式规范化 |
-| `data-availability` | 同上 | 实验数据展示规范 |
-| `paper2ppt` | 同上 | 论文转演示文稿 |
-| `reviewer-response` | 同上 | 审稿意见回复辅助 |
+> **曾用名说明**：本套件原为 Codex 版 `academic-research-suite`（链接 `academic-research-skills-codex`），v5 升级为 Claude 原生版。`deep-research` 等子技能是 ars-suite 自带的，非外部并入。曾被评估过的 `Weizhena/Deep-Research-skills`（独立 skill）和 `research-codex` 系列（3 个 Codex 独立 skill）经综合比较后已在 v4 中移除。
 
-> **关于已移除的 Skills**：原指导书中的 `Anthropic-Cybersecurity-Skills`（威胁情报/流量狩猎）、`trailofbits/skills`（静态分析/YARA）、`briiirussell/cybersecurity-skills`（Sigma/检测工程）、`Masriyan/Claude-Code-CyberSecurity-Skill`（日志分析）等 48 个 Skill 已从本仓库移除。这些 Skill 用于检测工程、恶意软件分析、SOC 运营等方向，对加密流量分类/ML 方法创新等研究方向并非必需。实验数据处理、代码审查、威胁建模等能力由 AI 原生能力替代，无需专用 Skill。
+### 1.2 论文写作（7 个）
+
+以下 7 个 skill 源自 [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills)，经过去品牌化和 static/dynamic layers 重构。原 nature-* 系列与现名的对应关系见文末曾用名映射表。
+
+| Skill 名称 | 曾用名 | 核心用途 |
+|------------|--------|----------|
+| `academic-figure` | nature-figure | 顶会图表规范校验与生成（阶段三图表规划→阶段四.2 生成→阶段六最终校验） |
+| `paper-writing` | nature-writing | 论文起草与框架搭建（从笔记/图表/实验结果写初稿，非润色） |
+| `paper-polishing` | nature-polishing | 语言抛光与学术表达优化（润色已有文本 + LaTeX 排版修复） |
+| `targeted-citation` | nature-citation | CS/安全顶会定向引用（分段→检索→匹配顶会→导出参考文献） |
+| `data-availability` | nature-data | 实验数据可用性声明、数据仓库选择、FAIR 元数据校验 |
+| `paper2ppt` | nature-paper2ppt | 论文转演示文稿（中文 PPTX），含自我审查循环 |
+| `reviewer-response` | nature-response | 审稿意见逐点回复辅助（起草/审计/修订） |
+
+### 1.3 核心工作流（4 个）
+
+| Skill 名称 | 来源 | 核心用途 |
+|------------|------|----------|
+| `planning-with-files` | [OthmanAdi/planning-with-files](https://github.com/othmanadi/planning-with-files) | 长任务持久化计划，跨会话不丢失进度 |
+| `neat-freak` | [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) | `/neat` 阶段收尾同步文档、代码与 Agent 记忆 |
+| `unslop` | [MohamedAbdallah-14/unslop](https://github.com/MohamedAbdallah-14/unslop) | 去 AI 写作痕迹，5 级强度可调，保留代码/URL/表格 |
+| `unslop-file` | [MohamedAbdallah-14/unslop](https://github.com/MohamedAbdallah-14/unslop) | Markdown 文件人性化（计划、文档等） |
+
+### 曾用名速查表
+
+| 旧名称 | 现名称 | 说明 |
+|--------|--------|------|
+| `academic-research-suite` | `ars-suite` | Codex 版 → Claude 版，上游仓库变更 |
+| `research-codex`（3 个） | （已移除） | Codex 独立 skill，比较后移除，非并入 ars-suite |
+| `Weizhena/Deep-Research-skills` | （已移除） | 独立 skill，ars-suite 自带 deep-research，比较后移除此独立版本 |
+| `nature-figure` | `academic-figure` | 去品牌化 |
+| `nature-writing` | `paper-writing` | 去品牌化 |
+| `nature-polishing` | `paper-polishing` | 去品牌化 |
+| `nature-citation` | `targeted-citation` | 去品牌化 + 聚焦 CS/安全顶会 |
+| `nature-data` | `data-availability` | 去品牌化 |
+| `nature-paper2ppt` | `paper2ppt` | 去品牌化 |
+| `nature-response` | `reviewer-response` | 去品牌化 |
+
+> **关于已移除的 Skills**：v4 精简中移除了威胁情报（Anthropic-Cybersecurity-Skills 等）、网络流量处理、代码安全审计、SOC 运营等 48 个 Skill。这些 Skill 面向检测工程、恶意软件分析、SOC 运营等方向，对加密流量分类/ML 方法创新等研究方向并非必需。实验数据处理、代码审查、威胁建模等能力由 AI 原生能力替代，无需专用 Skill。
 
 ---
 
@@ -53,18 +81,18 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `ars-suite` | `deep-research socratic` | 凝练研究问题、梳理创新方向 |
+| `ars-suite` | 子技能 `deep-research socratic` | 凝练研究问题、梳理创新方向 |
 | `planning-with-files` | 直接调用 | 初始化项目里程碑计划，持久化到文件 |
 | `neat-freak` | `/neat` | 阶段收尾，同步框架信息到项目文档与 Agent 记忆 |
 
 #### 操作方法
 
 1. **核心问题凝练**
-   调用 `deep-research` 的 socratic 模式，输入研究方向与背景，通过多轮对话收敛研究边界。
+   调用 `ars-suite` 的 `deep-research socratic` 模式，输入研究方向与背景，通过多轮对话收敛研究边界。
 
    指令示例：
 
-   用 ars-suite 的 deep-research: 我想研究「基于多维度流量特征的恶意 LLM Agent 通信检测」
+   /ars-suite deep-research socratic: 我想研究「基于多维度流量特征的恶意 LLM Agent 通信检测」
    > 背景：当前 LLM Agent 广泛应用于自动化任务，其 C2 通信与恶意指令分发难以被传统 IDS 识别
    > 请梳理核心研究问题、明确与现有工作的差异、初步的创新方向
 
@@ -118,8 +146,7 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `ars-suite` | `deep-research lit-review` | 系统性文献综述，输出结构化综述与研究缺口矩阵 |
-| `deep-research` | 直接调用 | 两阶段深度调研：先纲要确认，再逐项展开 |
+| `ars-suite` | 子技能 `deep-research lit-review` | 系统性文献综述，输出结构化综述与研究缺口矩阵（含两阶段深度调研：纲要→展开） |
 | `neat-freak` | `/neat` | 阶段收尾 |
 
 > **关于威胁建模**：检测、攻防、恶意软件分析等方向可能需要 MITRE ATT&CK 威胁框架映射或领域威胁模型（如 Dolev-Yao、UC 模型），这部分由 AI 原生能力辅助完成。加密流量分类等 ML 方法创新方向通常不需要独立的威胁建模步骤。
@@ -127,11 +154,11 @@
 #### 操作方法
 
 1. **学术文献系统性综述**
-   调用 `deep-research` 的 lit-review 模式，输出结构化综述与研究缺口。
+   调用 `ars-suite` 的 `deep-research lit-review` 模式，输出结构化综述与研究缺口。
 
    指令示例：
 
-   用 ars-suite 的 deep-research: 针对「恶意 AI Agent 网络流量检测」做系统性文献综述
+   /ars-suite deep-research lit-review: 针对「恶意 AI Agent 网络流量检测」做系统性文献综述
    > 重点覆盖：
    > 1. 传统网络入侵检测的流量特征工程方法
    > 2. LLM/Agent 通信流量的特性与识别现状
@@ -139,11 +166,11 @@
    > 要求标注文献出处，区分顶会/顶刊与其他工作，输出研究缺口矩阵
 
 2. **细分方向深度调研（推荐执行）**
-   针对特定子方向调用 `deep-research` 执行两阶段调研，先输出纲要再深度展开。
+   针对特定子方向调用 `ars-suite` 的 `deep-research` 执行两阶段调研，先输出纲要再深度展开。
 
    指令示例：
 
-   > 用 research skill 先生成「恶意 Agent C2 通信手法」的调研纲要
+   > 用 deep-research (ars-suite 子技能) 先生成「恶意 Agent C2 通信手法」的调研纲要
    > 确认纲要后再逐项做深度调查，整理技术细节与公开数据集
 
 3. **阶段收尾**
@@ -195,11 +222,11 @@
 #### 操作方法
 
 1. **方案整体架构设计**
-   调用 `ars-suite` 中的对应子技能 输出覆盖全要素的研究方案框架。
+   调用 `ars-suite` 的 `deep-research` 输出覆盖全要素的研究方案框架。
 
    指令示例：
 
-   用 ars-suite 的 deep-research: 基于前面的文献综述与威胁模型，设计完整的研究方案
+   /ars-suite deep-research: 基于前面的文献综述与威胁模型，设计完整的研究方案
    > 方案需包含：
    > 1. 研究背景与问题挑战
    > 2. 方法整体架构与核心模块划分
@@ -402,7 +429,7 @@
 
    指令示例：
 
-   用 ars-suite 的 deep-research: 以 IEEE S&P 审稿人的身份，对我的研究做全面评审
+    用 ars-suite 的 academic-paper-reviewer: 以 IEEE S&P 审稿人的身份，对我的研究做全面评审
    > 评审内容：
    > 1. 研究问题的重要性与创新性
    > 2. 实验设计的严谨性：数据集合理性、基线对比公平性、评价指标全面性
@@ -442,7 +469,7 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `ars-suite` | 直接调用 | 分章节写作逻辑校验（引言、相关工作、方法、实验、讨论） |
+| `ars-suite` | 子技能 `academic-paper` | 分章节写作逻辑校验（引言、相关工作、方法、实验、讨论） |
 | `paper-polishing` | 直接调用 | 语言抛光与学术表达优化（已有文本）；LaTeX 排版修复 |
 | `paper-writing` | 直接调用 | 从笔记/图表/数据起草各章节初稿 |
 | `academic-figure` | 直接调用 | 图表规范最终校验：格式、标注、引用、灰度兼容 |
@@ -476,7 +503,7 @@
 
    指令示例（方法章节）：
 
-   用 ars-suite 的 deep-research: 检查我的 Methodology 章节逻辑
+   /ars-suite: 检查我的 Methodology 章节逻辑
    > [粘贴章节草稿]
    > 检查：整体架构到模块细节的递进是否自然、核心创新点是否突出、技术描述是否准确
    > 给出修改建议
@@ -550,7 +577,7 @@
 
 | Skill | 调用方式 | 用途 |
 |-------|----------|------|
-| `ars-suite` | 直接调用 | 梳理审稿意见回复思路，区分实验补充/文字修改/说明解释 |
+| `reviewer-response` | 直接调用 | 梳理审稿意见回复思路，区分实验补充/文字修改/说明解释 |
 | `neat-freak` | `/neat` | 全量项目归档 |
 
 #### 操作方法
@@ -560,7 +587,7 @@
 
    指令示例：
 
-   用 ars-suite 的 deep-research: 梳理这几条审稿意见的回复思路
+    用 reviewer-response: 梳理这几条审稿意见的回复思路
    > [粘贴审稿意见]
    > 要求：每条意见对应明确的回复点与修改方案，区分实验补充、文字修改、说明解释三类
    > 回复语气礼貌专业
