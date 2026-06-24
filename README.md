@@ -6,8 +6,16 @@
 
 ```bash
 # 克隆到 Claude Code 用户级 Skills 目录
-git clone <this-repo> ~/.claude/skills/
+git clone git@github.com:pamisu/research-workflow-skills.git ~/.claude/skills/
 ```
+
+## 配套文档
+
+| 文档 | 说明 |
+|------|------|
+| [docs/网络安全科研AI工作流完整指导书.md](docs/网络安全科研AI工作流完整指导书.md) | 七阶段科研工作流详细指导 |
+| [docs/网络安全科研AI工作流速查表.md](docs/网络安全科研AI工作流速查表.md) | 阶段-Skill-操作速查索引 |
+| [docs/示例：基于图的预训练加密流量分类研究全流程.md](docs/示例：基于图的预训练加密流量分类研究全流程.md) | 全流程实操案例演示 |
 
 ## Skills 清单
 
